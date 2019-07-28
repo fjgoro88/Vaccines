@@ -2,7 +2,7 @@
 
 Aplicación Shiny para mostrar el modelo SIR con un compartimento adicional para vacunas
 
-Puede ejecutar la versión **en español** localmente en su ordenador con 
+Puede ejecutar la versión **en español** localmente en su ordenador con:
 
 ```{r}
 shiny::runGitHub("fjgoro88/Vaccines")
