@@ -33,31 +33,31 @@ ui <- dashboardPage(
   dashboardHeader(disable = TRUE),
   dashboardSidebar(
     sliderInput("popsize",
-      "Population size (millions):",
-      min = 1, max = 300, value = 6
+      "Tamaño de la población (millones):",
+      min = .2, max = 300, value = 8
     ),
     sliderInput("connum",
-      "Basic reproductive number (R0, # persons):",
+      "Número reproductivo básico (R0, # personas):",
       min = .5, max = 20, value = 5
     ),
     sliderInput("pinf",
-      "# infected at outbreak:",
+      "# infectados en el momento del brote:",
       min = 1, max = 50, value = 2
     ),
     sliderInput("pvac",
-      "Proportion vaccinated / immune (%):",
+      "Proporcion de vacunados / inmunes (%):",
       min = 0, max = 100, value = 75
     ),
     sliderInput("vaceff",
-      "Vaccine effectiveness (%):",
+      "Efectividad de la Vacuna (%):",
       min = 0, max = 100, value = 85
     ),
     sliderInput("infper",
-      "Infection period (days):",
+      "Periodo de contagio (dias):",
       min = 1, max = 30, value = 7
     ),
     sliderInput("timeframe",
-      "Time frame (days):",
+      "Periodo de tiempo (dias):",
       min = 1, max = 400, value = 200
     )
     
@@ -126,22 +126,22 @@ server <- function(input, output) {
         key2 = recode(
           key,
           S = "Susceptible (S)",
-          I = "Infected (I)",
-          R = "Recovered (R)",
-          V = "Vaccinated / immune (V)"
+          I = "Infectado (I)",
+          R = "Curado (R)",
+          V = "Vacunado / inmune (V)"
         ),
         keyleft = recode(
           key,
           S = "Susceptible (S)",
           I = "",
           R = "",
-          V = "Vaccinated / immune (V)"
+          V = "Vacunado / inmune (V)"
         ),
         keyright = recode(
           key,
           S = "",
-          I = "Infected (I)",
-          R = "Recovered (R)",
+          I = "Infectado (I)",
+          R = "Curado (R)",
           V = ""
         )
       )
