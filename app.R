@@ -222,7 +222,7 @@ server <- function(input, output) {
   output$HIBox <- renderValueBox({
     valueBox(
       paste0(round(100 * (1 - 1 / (input$connum)), 2), "%"),
-      "Proportion of population that needs to be immune for herd immunity",
+      "Proporción de la población que necesita ser inmune para la inmunidad del rebaño",
       icon = icon("medkit"),
       color = "blue"
     )
