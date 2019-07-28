@@ -34,7 +34,7 @@ ui <- dashboardPage(
   dashboardSidebar(
     sliderInput("popsize",
       "Population size (millions):",
-      min = .2, max = 300, value = 6
+      min = 1, max = 300, value = 6
     ),
     sliderInput("connum",
       "Basic reproductive number (R0, # persons):",
