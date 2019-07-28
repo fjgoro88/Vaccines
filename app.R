@@ -12,6 +12,7 @@ library("ggplot2")
 library("tidyverse")
 library("ggrepel")
 library("shinydashboard")
+theme_set(theme_cowplot())
 
 ## Create an SIR function
 sir <- function(time, state, parameters) {
