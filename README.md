@@ -1,14 +1,14 @@
 # Vaccine
 
-Shiny app to show the SIR model with an additional vaccine compartment
+Aplicación Shiny para mostrar el modelo SIR con un compartimento adicional para vacunas
 
-You can run the **English** language version locally on your computer with 
+Puede ejecutar la versión **en español** localmente en su ordenador con 
 
 ```{r}
 shiny::runGitHub("fjgoro88/Vaccines")
 ```
 
-it requires that you have the following packages installed:
+Requiere de los sigueintes paquetes R instalados:
 
 ```{r}
 install.packages("shiny")
@@ -19,7 +19,8 @@ install.packages("tidyverse")
 install.packages("ggrepel")
 install.packages("shinydashboard")
 ```
-or it requires that they are summoned:
+o los requiere lanzados:
+
 ```{r}
 library("shiny")
 library("deSolve")
