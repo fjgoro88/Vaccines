@@ -1,5 +1,5 @@
 # 
-# Shiny app for SIR model with vaccinations
+# Aplicación Shiny para el modelo SIR con vacunaciones
 #
 # Created by Claus Ekstrøm 2019. Modified by FJGORO88 2019, 07.
 #
@@ -155,7 +155,7 @@ server <- function(input, output) {
              label = key2,
              data_id = id
            )) + # ylim(0, 1) +
-      ylab("Proportion of full population") + xlab("Time (days)") +
+      ylab("Proporción de la población total") + xlab("Tiempo (dias)") +
       geom_line(size = 2) +
       geom_text_repel(
         data = subset(out, time == max(time)),
@@ -193,7 +193,7 @@ server <- function(input, output) {
   output$progressBox <- renderValueBox({
     valueBox(
       dataInput() %>% filter(time == max(time)) %>% select(R) %>% mutate(R = round(100 * R, 2)) %>% paste0("%"),
-      "Proportion of full population that got the disease by end of time frame",
+      "Proporción de la población total que contrajo la enfermedad al final del periodo de tiempo",
       icon = icon("thumbs-up", lib = "glyphicon"),
       color = "black"
     )
@@ -203,7 +203,7 @@ server <- function(input, output) {
     valueBox(
       paste0(round(
         100 * (dataInput() %>% filter(row_number() == n()) %>% mutate(res = (R + I) / (S + I + R)) %>% pull("res")), 2), "%"),
-      "Proportion of susceptibles that will get the disease by end of time frame",
+      "Proporción de susceptibles que contraerán la enfermedad al final del periodo de tiempo",
       icon = icon("thermometer-full"),
       color = "black"
     )
@@ -213,7 +213,7 @@ server <- function(input, output) {
     valueBox(
       paste0(round(input$connum *
                      (1 - input$pvac / 100 * input$vaceff / 100), 2), ""),
-      "Effective R0 (for populationen at outbreak, when immunity is taken into account)",
+      "R0 efectivo (para la población en el momento del brote, si se tiene en cuenta la inmunidad)",
       icon = icon("arrows-alt"),
       color = "red"
     )
